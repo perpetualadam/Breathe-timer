@@ -1,17 +1,14 @@
 // service-worker.js
-// service-worker.js
 
-const CACHE_NAME = "breathe-timer-cache-v2";
+const CACHE_NAME = "breathing-timer-cache-v3";
 const urlsToCache = [
-  const urlsToCache = [
-  "/breathe-timer/index.html",
-  "/breathe-timer/styles.css",
-  "/breathe-timer/app.js",
-  "/breathe-timer/bell.mp3",
-  "/breathe-timer/manifest.json",
-  "/breathe-timer/icon-192.png",
-  "/breathe-timer/icon-512.png"
-];
+  "/breathing-timer/index.html",
+  "/breathing-timer/styles.css",
+  "/breathing-timer/app.js",
+  "/breathing-timer/bell.mp3",
+  "/breathing-timer/manifest.json",
+  "/breathing-timer/icon-192.png",
+  "/breathing-timer/icon-512.png"
 ];
 
 self.addEventListener("install", (event) => {
@@ -38,7 +35,7 @@ self.addEventListener("activate", (event) => {
 });
 
 self.addEventListener("fetch", (event) => {
-  // Allow external URLs (like Buy Me a Coffee) to bypass the service worker
+  // Allow external links (e.g. Buy Me a Coffee) to bypass service worker
   if (!event.request.url.startsWith(self.location.origin)) {
     console.log("Skipping external request:", event.request.url);
     return;
