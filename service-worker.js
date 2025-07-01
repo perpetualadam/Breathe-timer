@@ -1,7 +1,7 @@
 // service-worker.js
 
 const CACHE_NAME = "breathing-timer-cache-v3";
-const urlsToCache = [const urlsToCache = [
+const urlsToCache = [
   "/Breathe-timer/index.html",
   "/Breathe-timer/styles.css",
   "/Breathe-timer/app.js",
