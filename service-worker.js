@@ -1,14 +1,14 @@
 // service-worker.js
 
 const CACHE_NAME = "breathing-timer-cache-v3";
-const urlsToCache = [
-  "/breathing-timer/index.html",
-  "/breathing-timer/styles.css",
-  "/breathing-timer/app.js",
-  "/breathing-timer/bell.mp3",
-  "/breathing-timer/manifest.json",
-  "/breathing-timer/icon-192.png",
-  "/breathing-timer/icon-512.png"
+const urlsToCache = [const urlsToCache = [
+  "/Breathe-timer/index.html",
+  "/Breathe-timer/styles.css",
+  "/Breathe-timer/app.js",
+  "/Breathe-timer/bell.mp3",
+  "/Breathe-timer/manifest.json",
+  "/Breathe-timer/icon-192.png",
+  "/Breathe-timer/icon-512.png"
 ];
 
 self.addEventListener("install", (event) => {
