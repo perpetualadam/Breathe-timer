@@ -3,13 +3,15 @@
 
 const CACHE_NAME = "breathing-timer-cache-v2";
 const urlsToCache = [
-  "index.html",
-  "styles.css",
-  "app.js",
-  "bell.mp3",
-  "manifest.json",
-  "icon-192.png",
-  "icon-512.png"
+  const urlsToCache = [
+  "/breathe-timer/index.html",
+  "/breathe-timer/styles.css",
+  "/breathe-timer/app.js",
+  "/breathe-timer/bell.mp3",
+  "/breathe-timer/manifest.json",
+  "/breathe-timer/icon-192.png",
+  "/breathe-timer/icon-512.png"
+];
 ];
 
 self.addEventListener("install", (event) => {
