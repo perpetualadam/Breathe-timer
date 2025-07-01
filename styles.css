@@ -1,9 +1,11 @@
-/* General page styling */
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap');
+
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Arial', sans-serif;
-  background: linear-gradient(to bottom, #e6f2f8, #a8d5ba);
+  font-family: 'Quicksand', sans-serif;
+  background: linear-gradient(to bottom, #d7f0fa, #b1e5d2);
   color: #333;
   min-height: 100vh;
   display: flex;
@@ -14,22 +16,22 @@ body {
 .container {
   background: rgba(255, 255, 255, 0.9);
   padding: 30px;
-  border-radius: 12px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
   max-width: 400px;
-  width: 100%;
+  margin: 40px auto;
   text-align: center;
 }
 
 h1 {
-  margin-top: 0;
   color: #2d5f4d;
-  font-size: 2.2em;
+  font-size: 2.5em;
+  margin-top: 0;
 }
 
 h2 {
-  margin: 15px 0 10px;
   color: #4a7c59;
+  margin: 15px 0 10px;
 }
 
 p {
@@ -41,24 +43,25 @@ p {
 }
 
 button {
-  background-color: #4a7c59;
+  background: linear-gradient(to right, #56ab2f, #a8e063);
   color: white;
   border: none;
-  padding: 12px 20px;
+  padding: 12px 24px;
   margin: 10px;
-  font-size: 16px;
-  border-radius: 6px;
+  font-size: 18px;
+  border-radius: 50px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-button:disabled {
-  background-color: #ccc;
-  cursor: not-allowed;
+  transition: transform 0.2s, box-shadow 0.2s;
 }
 
 button:hover:not(:disabled) {
-  background-color: #3c6347;
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+button:disabled {
+  background: #cccccc;
+  cursor: not-allowed;
 }
 
 .language-selector {
@@ -80,26 +83,43 @@ select {
 }
 
 #animation-circle {
-  margin: 20px auto;
-  width: 120px;
-  height: 120px;
+  width: 150px;
+  height: 150px;
+  margin: 30px auto;
+  background: radial-gradient(circle, #a8e063 0%, #56ab2f 100%);
   border-radius: 50%;
-  background: #a8d5ba;
-  opacity: 0.7;
-  transition: all 4s ease;
+  opacity: 0.8;
+  transform: scale(1);
+  transition: transform 4s ease;
 }
 
 #animation-circle.grow {
   transform: scale(1.8);
-  transition: transform 4s ease;
 }
 
 #animation-circle.hold {
   transform: scale(1.8);
-  transition: none;
 }
 
 #animation-circle.shrink {
   transform: scale(1);
   transition: transform 8s ease;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  body {
+    background: linear-gradient(to bottom, #223843, #1d2d2f);
+    color: #f0f0f0;
+  }
+
+  .container {
+    background: rgba(34, 56, 67, 0.9);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+  }
+
+  button {
+    background: linear-gradient(to right, #4ecca3, #393e46);
+    color: #ffffff;
+  }
 }
