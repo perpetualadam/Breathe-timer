@@ -41,6 +41,22 @@
       </select>
     </div>
   </div>
+  
+  <audio id="bell-sound" src="bell.mp3" preload="auto"></audio>
+
+  <script src="app.js"></script>
+  <script>
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker
+        .register("service-worker.js")
+        .then((reg) => {
+          console.log("Service Worker registered!", reg);
+        })
+        .catch((err) => {
+          console.log("Service Worker registration failed:", err);
+        });
+    }
+  </script>
   <div class="donation">
   <a href="coff.ee/craftopediamedia" target="_blank">
     <button style="
@@ -58,21 +74,5 @@
     </button>
   </a>
 </div>
-
-  <audio id="bell-sound" src="bell.mp3" preload="auto"></audio>
-
-  <script src="app.js"></script>
-  <script>
-    if ("serviceWorker" in navigator) {
-      navigator.serviceWorker
-        .register("service-worker.js")
-        .then((reg) => {
-          console.log("Service Worker registered!", reg);
-        })
-        .catch((err) => {
-          console.log("Service Worker registration failed:", err);
-        });
-    }
-  </script>
 </body>
 </html>
