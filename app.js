@@ -1,6 +1,6 @@
 const translations = {
   en: {
-    appTitle: "Breathing Timer",
+    appTitle: "Breathe Timer",
     start: "Start",
     stop: "Stop",
     breatheIn: "Breathe In",
