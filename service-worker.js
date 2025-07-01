@@ -6,6 +6,7 @@ const urlsToCache = [
   "/Breathe-timer/styles.css",
   "/Breathe-timer/app.js",
   "/Breathe-timer/bell.mp3",
+  "/Breathe-timer/rain.mp3",
   "/Breathe-timer/manifest.json",
   "/Breathe-timer/icon-192.png",
   "/Breathe-timer/icon-512.png"
