@@ -1,6 +1,6 @@
 const translations = {
   en: {
-    appTitle: "Breathe Timer",
+    appTitle: "Breathing Timer",
     start: "Start",
     stop: "Stop",
     breatheIn: "Breathe In",
@@ -286,3 +286,8 @@ document.addEventListener("DOMContentLoaded", () => {
       document.documentElement.lang = "ar";
       document.body.dir = "rtl";
     } else {
+      document.documentElement.lang = lang;
+      document.body.dir = "ltr";
+    }
+  }
+});
