@@ -1,3 +1,5 @@
+console.log("Testing app.js loaded");
+console.log("app.js loaded and DOM ready!");
 document.addEventListener("DOMContentLoaded", () => {
   let currentLang = "en";
   let cycle = 1;
