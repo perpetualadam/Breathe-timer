@@ -72,7 +72,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   bmcButton.addEventListener("click", () => {
-    window.open("https://www.buymeacoffee.com/perpetualadam", "_blank");
+    window.open("https://www.buymeacoffee.com/craftopediamedia", "_blank");
   });
 
   toggleSoundBtn.addEventListener("click", () => {
