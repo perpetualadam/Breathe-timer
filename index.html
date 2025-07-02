@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Breathe Timer</title>
-  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
   <link rel="manifest" href="manifest.json" />
   <base href="/Breathe-timer/">
@@ -14,25 +13,21 @@
 
   <div class="container">
     <h1 id="app-title">Breathing Timer</h1>
-
-    <p id="cycle-counter">Cycle: 1 / 12</p>
-
+    <h2 id="phase-text">Ready</h2>
     <div id="animation-circle"></div>
-
-    <h2 id="phase-text" class="hidden">Ready</h2>
-    <p id="timer-display">0.0</p>
-
+    <div id="timer-display">0.0</div>
     <div id="progress-container">
       <div id="progress-bar"></div>
     </div>
+    <p id="cycle-counter">Cycle: 0/12</p>
 
     <div class="buttons">
-      <button id="start-btn" onclick="alert('CLICKED!')">Start</button>
+      <button id="start-btn">Start</button>
       <button id="stop-btn" disabled>Stop</button>
     </div>
 
     <div class="language-selector">
-      <label for="lang-select" id="language-label">Language:</label>
+      <label id="language-label" for="lang-select">Language:</label>
       <select id="lang-select">
         <option value="en">English</option>
         <option value="es">Español</option>
@@ -48,18 +43,22 @@
       </select>
     </div>
 
-    <button id="bmc-button">☕ Buy Me a Coffee</button>
     <button id="toggle-sound">🔊 Play Rain</button>
+    <button id="bmc-button">☕ Buy Me a Coffee</button>
   </div>
 
+  <!-- Audio files -->
   <audio id="bell-sound" src="bell.mp3" preload="auto"></audio>
   <audio id="background-sound" src="rain.mp3" loop preload="auto"></audio>
 
-  <script src="app.js"></script>
+  <!-- tsParticles -->
   <script src="https://cdn.jsdelivr.net/npm/tsparticles@3/tsparticles.bundle.min.js"></script>
   <script>
     tsParticles.load("tsparticles", {
-      fullScreen: { enable: true, zIndex: -1 },
+      fullScreen: {
+        enable: true,
+        zIndex: -1
+      },
       particles: {
         number: { value: 40 },
         size: { value: 2 },
@@ -68,12 +67,19 @@
         color: { value: "#56ab2f" }
       }
     });
+  </script>
 
-    if ("serviceWorker" in navigator) {
-      navigator.serviceWorker
-        .register("service-worker.js")
-        .then((reg) => console.log("Service Worker registered!", reg))
-        .catch((err) => console.log("Service Worker registration failed:", err));
+  <!-- Main App Script -->
+  <script src="app.js"></script>
+
+  <!-- Register Service Worker -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('service-worker.js')
+          .then(reg => console.log("Service Worker registered!", reg))
+          .catch(err => console.log("Service Worker error:", err));
+      });
     }
   </script>
 </body>
